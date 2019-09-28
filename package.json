@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-chat",
+  "version": "1.0.0",
+  "description": "A simple chatting application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forhad-h/nodejs-chat.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Forhad Hosain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/forhad-h/nodejs-chat/issues"
+  },
+  "homepage": "https://github.com/forhad-h/nodejs-chat#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
