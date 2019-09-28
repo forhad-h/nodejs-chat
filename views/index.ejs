@@ -3,13 +3,15 @@
   <head>
     <title>Simple chatting app</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="../../socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
   <body>
     <ul id="messages"></ul>
     <form action="/" method="POST" id="chatForm">
-      <input
+      <div class="wrapper">
+
+        <input
         type="text"
         id="txt"
         autocomplete="off"
@@ -17,6 +19,8 @@
         placeholder="type your message here..."
       />
       <button>Send</button>
+
+      </div>
     </form>
 
     <script>
@@ -28,7 +32,7 @@
         return false
       })
 
-      // socket.io
+      // connect with server
       var socket = io.connect('http://localhost:8080')
 
       // append the chat text message
@@ -43,6 +47,8 @@
 
       // ask username
       var username = prompt('Please tell me your name')
+
+      // emit the username with a value
       socket.emit('username', username)
     </script>
   </body>

@@ -1,12 +1,12 @@
 const express = require('express')
 const http = require('http')
-const socketio = require('socket.io')
+const socketIo = require('socket.io')
 
 const app = express()
 
 const server = http.Server(app)
 
-const io = socketio(server)
+const io = socketIo(server)
 
 app.use(express.static(`${__dirname}/public`))
 
@@ -20,7 +20,7 @@ io.sockets.on('connection', socket => {
     io.emit('is_online', `🔵 <i>${socket.username} join the chat...`)
   })
 
-  socket.on('disconnet', username => {
+  socket.on('disconnect', () => {
     io.emit('is_online', `🔴 <i>${socket.username} left the chat..`)
   })
 
